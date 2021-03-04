@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/flowlayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:padding="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/date_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mar\n08\nSat"
+            android:layout_weight="1">
+
+        </TextView>
+        <TextView
+            android:id="@+id/flow_textview"
+            android:layout_marginLeft="7dp"
+            android:layout_gravity="end"
+            android:text="Flow"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/user_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <TextView
+
+            android:id="@+id/username_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Shivam Sharma"
+            android:layout_marginLeft="19dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imagetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_access_time_24" />
+
+        <TextView
+            android:id="@+id/textviewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:layout_marginLeft="19dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/locationimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_location_on_24" />
+
+        <TextView
+            android:id="@+id/location_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:layout_marginLeft="19dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="7dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/layoutforbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:text="Decline"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/Declinebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+        <Button
+            android:text="Accept"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/acceptbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+        </Button>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>
