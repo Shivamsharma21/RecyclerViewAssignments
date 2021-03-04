@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText newUsername;
     RecyclerView recyclerView;
     private onClickInterface onclickInterface;
     ImageView addnew_item,delete_item;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        newUsername = findViewById(R.id.enternew_usernametv);
             Log.i("ONXX","This is On Create");
         addnew_item = findViewById(R.id.adding_new_item);
         delete_item = findViewById(R.id.delete_new_item);
@@ -81,9 +84,14 @@ public class MainActivity extends AppCompatActivity {
         addnew_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PersonInfo personInfo10 = new PersonInfo("Wiz Khalifa","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
-                details.add(personInfo10);
-                viewAdapter.notifyItemInserted(details.size() - 1);
+
+                String newuser = newUsername.getText().toString();
+
+                PersonInfo personInfo10 = new PersonInfo(newuser,"9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+                details.add(0,personInfo10);
+
+                viewAdapter.notifyDataSetChanged();
+
                 Toast.makeText(MainActivity.this, "New User is added", Toast.LENGTH_SHORT).show();
 
             }
