@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         };
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setItemAnimator(null);
 
 
         List<PersonInfo>details = new ArrayList<>();
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    delete_item.setOnClickListener(new View.OnClickListener() {
+    /*delete_item.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "List Is Empty", Toast.LENGTH_SHORT).show();
             }
         }
-    });
+    });*/
 
 
     }

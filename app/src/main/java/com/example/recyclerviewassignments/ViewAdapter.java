@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,10 +41,20 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
          holder.Flowtv.setText(personInfo.getFlow());
          holder.locationtv.setText(personInfo.getLocation());
          holder.timetv.setText(personInfo.getTime());
+         holder.delete_item.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 itemList.remove(position);
+                 //or use this for better perfomance.
+                 notifyItemChanged(position);
+
+             }
+         });
          holder.Accept_btn.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  onClickInterface.setClick(position);
+
              }
          });
     }
@@ -58,7 +68,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
 
         TextView datetv,Flowtv,usernametv,timetv,locationtv;
         Button Decline_btn,Accept_btn;
-        ImageView user_img,clock_img,locationimg,addnew_item;
+        ImageView user_img,clock_img,locationimg,delete_item;
 
         public ViewHolderX(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +85,8 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
             Accept_btn = itemView.findViewById(R.id.acceptbtn);
 
            // image view
+
+            delete_item =itemView.findViewById(R.id.delete_new_item);
 
             user_img = itemView.findViewById(R.id.user_imageView);
             clock_img = itemView.findViewById(R.id.imagetime);
