@@ -49,23 +49,25 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(null);
 
 
+        String status ="off";
+
         List<PersonInfo>details = new ArrayList<>();
 
-        PersonInfo personInfo = new PersonInfo("Shivam Sharma","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo = new PersonInfo("Shivam Sharma","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo1 = new PersonInfo("Jaden grece","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo1 = new PersonInfo("Jaden grece","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo2 = new PersonInfo("Michale Vinken","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo2 = new PersonInfo("Michale Vinken","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo3 = new PersonInfo("Mila jade","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo3 = new PersonInfo("Mila jade","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo4 = new PersonInfo("Mily Chrish","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo4 = new PersonInfo("Mily Chrish","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo5 = new PersonInfo("Won Shi","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo5 = new PersonInfo("Won Shi","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo6 = new PersonInfo("Maden Claf","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo6 = new PersonInfo("Maden Claf","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
-        PersonInfo personInfo7 = new PersonInfo("Blake Gracy","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+        PersonInfo personInfo7 = new PersonInfo("Blake Gracy","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
 
 
         details.add(personInfo);
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String newuser = newUsername.getText().toString();
 
-                PersonInfo personInfo10 = new PersonInfo(newuser,"9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York");
+                PersonInfo personInfo10 = new PersonInfo(newuser,"9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York","off");
                 details.add(0,personInfo10);
 
                 viewAdapter.notifyDataSetChanged();
