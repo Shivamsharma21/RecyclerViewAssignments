@@ -145,24 +145,7 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
 
     recyclerView.setAdapter(viewAdapter);
 
-
-       viewAdapter.SetOnItemClickListner(new ViewAdapter.OnItemClickListner() {
-           @Override
-           public void OnItemClick(View view, int position) {
-               switchCompat.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       if (switchCompat.isChecked()){
-                           linearLayout.setBackgroundColor(Color.GREEN);
-                       }else{
-                           linearLayout.setBackgroundColor(Color.WHITE);
-                       }
-                   }
-               });
-           }
-       });
-
-
+        Log.d("In Bind View Holder","In Bind view Holder");
 
     addnew_item.setOnClickListener(new View.OnClickListener() {
             @Override

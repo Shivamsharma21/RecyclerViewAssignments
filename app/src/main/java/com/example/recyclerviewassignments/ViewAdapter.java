@@ -73,25 +73,33 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolderX holder, int position) {
 
-        final ViewHolderX viewHolderX = (ViewHolderX)holder;
+
+
 
         PersonInfo personInfo = itemList.get(position);
+
+
+        if (personInfo.getColor()=="off"){
+            holder.switchvalue.setText("off");
+        }
          holder.usernametv.setText(personInfo.getUsername());
          holder.Flowtv.setText(personInfo.getFlow());
          holder.locationtv.setText(personInfo.getLocation());
          holder.timetv.setText(personInfo.getTime());
 
-        String passname =  holder.usernametv.getText().toString();
 
-         String status = personInfo.getColor();
-
-         int pos = position;
-
-             personInfo.setColor(status);
-
-             if (personInfo.getColor()=="off"){
-                 holder.linearLayout.setBackgroundColor(Color.WHITE);
+         holder.switchCompat.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 if (holder.switchCompat.isChecked()){
+                 holder.linearLayout.setBackgroundColor(Color.GREEN);
+                 holder.switchvalue.setText("on");
+                 }else{
+                     holder.switchvalue.setText("off");
+                     holder.linearLayout.setBackgroundColor(Color.WHITE);
+                 }
              }
+         });
 
 
         holder.delete_item.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +107,8 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
             public void onClick(View v) {
                 itemList.remove(position);
                 notifyDataSetChanged();
+
+
             }
         });
         holder.usernametv.setOnClickListener(new View.OnClickListener() {
@@ -124,9 +134,9 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
         return super.getItemViewType(position);
     }
 
-    static class ViewHolderX extends RecyclerView.ViewHolder{
+    static class ViewHolderX extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-
+       TextView switchvalue;
         SwitchCompat switchCompat;
         LinearLayout linearLayout;
         TextView datetv,Flowtv,usernametv,timetv,locationtv;
@@ -137,10 +147,13 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
             super(itemView);
 
 
+            itemView.setOnClickListener(this);
             switchCompat = itemView.findViewById(R.id.switch1);
+            switchvalue = itemView.findViewById(R.id.switch_textview);
 
             linearLayout =itemView.findViewById(R.id.rootlayout);
             // textview
+
             datetv = itemView.findViewById(R.id.date_textview);
             Flowtv = itemView.findViewById(R.id.flow_textview);
             usernametv = itemView.findViewById(R.id.username_textview);
@@ -161,16 +174,6 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
 
 //            switchCompat.setOnClickListener(this);
 
-            switchCompat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (switchCompat.isChecked()){
-                        linearLayout.setBackgroundColor(Color.GREEN);
-                    }else{
-                        linearLayout.setBackgroundColor(Color.WHITE);
-                    }
-                }
-            });
             Accept_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -181,45 +184,14 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolderX> {
                 }
             });
 
-       /*     itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listner != null){
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION){
-                            listner.OnItemClick(v,position);
-                        }
-                    }
-                }
-            });*/
-
         }
 
-      /*  @Override
+        @Override
         public void onClick(View v) {
-        int position = getAdapterPosition();
-           if (position != 0){
-               switchCompat.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       if (switchCompat.isChecked()){
-                       linearLayout.setBackgroundColor(Color.GREEN);}
-                       else{
-                           linearLayout.setBackgroundColor(Color.WHITE);
-                       }
-                   }
-               });*/
-           }
+
+            }
         }
-
-
-
-            /*
-           if (switchCompat.isChecked()){
-               linearLayout.setBackgroundColor(Color.GREEN);
-           }else{
-               linearLayout.setBackgroundColor(Color.WHITE);
-           }*/
+    }
 
 
 
