@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
                     if(position != -1) {
                         String getUser = data.getStringExtra("Username");
 
-                        PersonInfo personInfoupdate = new PersonInfo(getUser,"22-22","1212","flow","location","color");
+                        PersonInfo personInfoupdate = new PersonInfo(getUser,"22-22","1212","flow","location","color",false);
                             details.remove(position);
                             details.add(position,personInfoupdate);
                             viewAdapter.notifyDataSetChanged();
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
     EditText newUsername;
     RecyclerView recyclerView;
     ImageView addnew_item,delete_item;
-    SwitchCompat switchCompat;
+    Switch switchCompat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,23 +112,23 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
 
 
         String status ="off";
+        boolean check = false;
 
+        PersonInfo personInfo = new PersonInfo("Shivam Sharma","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo = new PersonInfo("Shivam Sharma","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo1 = new PersonInfo("Jaden grece","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo1 = new PersonInfo("Jaden grece","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo2 = new PersonInfo("Michale Vinken","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo2 = new PersonInfo("Michale Vinken","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo3 = new PersonInfo("Mila jade","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo3 = new PersonInfo("Mila jade","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo4 = new PersonInfo("Mily Chrish","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo4 = new PersonInfo("Mily Chrish","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo5 = new PersonInfo("Won Shi","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo5 = new PersonInfo("Won Shi","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo6 = new PersonInfo("Maden Claf","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
-        PersonInfo personInfo6 = new PersonInfo("Maden Claf","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
-
-        PersonInfo personInfo7 = new PersonInfo("Blake Gracy","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status);
+        PersonInfo personInfo7 = new PersonInfo("Blake Gracy","9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York",status,check);
 
 
         details.add(personInfo);
@@ -146,22 +147,6 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
     recyclerView.setAdapter(viewAdapter);
 
 
-       viewAdapter.SetOnItemClickListner(new ViewAdapter.OnItemClickListner() {
-           @Override
-           public void OnItemClick(View view, int position) {
-               switchCompat.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       if (switchCompat.isChecked()){
-                           linearLayout.setBackgroundColor(Color.GREEN);
-                       }else{
-                           linearLayout.setBackgroundColor(Color.WHITE);
-                       }
-                   }
-               });
-           }
-       });
-
 
 
     addnew_item.setOnClickListener(new View.OnClickListener() {
@@ -170,9 +155,9 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
 
                 String newuser = newUsername.getText().toString();
 
-                PersonInfo personInfo10 = new PersonInfo(newuser,"9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York","off");
+                PersonInfo personInfo10 = new PersonInfo(newuser,"9:00 AM - 10 AM (1hr)","12-01-2021","Flow","New York","off",check);
 
-
+                personInfo10.setColor("off");
                 details.add(0,personInfo10);
 
                 viewAdapter.notifyDataSetChanged();
@@ -183,5 +168,7 @@ public class MainActivity extends AppCompatActivity implements ViewAdapter.Callb
         });
 
     }
+            public void InsertItem(int position){
 
+            }
      }

@@ -1,6 +1,10 @@
 package com.example.recyclerviewassignments;
 
 public class PersonInfo {
+
+
+
+    boolean checked;
    private String username;
    private String time;
    private String date;
@@ -9,6 +13,13 @@ public class PersonInfo {
    private String color;
 
 
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
 
     public String getUsername() {
         return username;
@@ -58,12 +69,13 @@ public class PersonInfo {
         this.color = color;
     }
 
-    public PersonInfo(String username, String time, String date, String flow, String location, String color) {
+    public PersonInfo(String username, String time, String date, String flow, String location, String color,boolean checked) {
         this.username = username;
         this.time = time;
         this.date = date;
         this.flow = flow;
         this.location = location;
         this.color = color;
+        this.checked = checked;
     }
 }
