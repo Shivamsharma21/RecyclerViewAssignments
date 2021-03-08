@@ -6,6 +6,9 @@ public class PersonInfo {
    private String date;
    private String flow;
    private String location;
+   private String color;
+
+
 
     public String getUsername() {
         return username;
@@ -47,11 +50,20 @@ public class PersonInfo {
         this.location = location;
     }
 
-    public PersonInfo(String username, String time, String date, String flow, String location) {
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public PersonInfo(String username, String time, String date, String flow, String location, String color) {
         this.username = username;
         this.time = time;
         this.date = date;
         this.flow = flow;
         this.location = location;
+        this.color = color;
     }
 }
